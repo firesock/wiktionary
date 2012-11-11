@@ -7,10 +7,22 @@ textarea#channel_box {
 input#text_input {
 	width: 100%;
 	top: 90%;
-	height: 10%;
+}
+
+img#img_area {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+div#container {
+	height: 50%;
+	display: inline-block;
+	max-width: 100%;
 }
 
 div#content {
+	height: 100%;
 	margin-left: 20%;
 	margin-right: 20%;
 }

@@ -40,7 +40,7 @@ io.sockets.on('connection', function (socket) {
 	  var clients = io.sockets.clients();
 	  for (var i = 0; i < clients.length; i++) {
 		  var client = clients[i];
-		  client.emit('msg', {msg: socket.id + ': ' + data.msg});
+		  client.emit('msg', {name: socket.id, msg: data.msg});
 	  }
   });
 });
