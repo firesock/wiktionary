@@ -37,10 +37,7 @@ io.sockets.on('connection', function (socket) {
   socket.emit('join', {'name': socket.id});
 
   socket.on('say', function(data) {
-	  var clients = io.sockets.clients();
-	  for (var i = 0; i < clients.length; i++) {
-		  var client = clients[i];
-		  client.emit('msg', {name: socket.id, msg: data.msg});
-	  }
+	  socket.broadcast.emit('msg', {name: socket.id, msg: data.msg});
+	  socket.emit('msg', {name: socket.id, msg: data.msg});
   });
 });
