@@ -21,6 +21,7 @@ $(document).keypress(function(e) {
 
 socket.on('msg', function(data) {
 	$('#channel_box').append(data.name + ': ' + data.msg + '\n');
+	$('#channel_box').scrollTop($('#channel_box')[0].scrollHeight);
 	$('img#img_area').attr('src', "");
 	$('img#img_area').attr('src', data.msg);
 });
