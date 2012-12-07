@@ -3,5 +3,9 @@ textarea#channel_box {
 }
 
 input#text_input {
-	width: 100%;
+	width: 90%;
+}
+
+input#submit {
+	width: 5%;
 }

@@ -22,9 +22,12 @@
 		<div class="span10">
 		  <h2>Wiktionary - Guess the Wikipedia Article!</h2>
 		  <p>One player chooses a secret wikipedia article. One person is chosen to guess this article. The first player can only hint at the target, via image links. Other connected players hinder the process by flooding other unrelated images in! Connect via IP on post-it note!</p>
+		  <textarea id = "channel_box" readonly = "readonly"></textarea>
+		  <form id="chat">
+			<input type="url" id = "text_input" autofocus = "autofocus" required="required"/>
+			<input type="submit" id="submit" value="Post"/>
+		  </form>
 		  <div id="container"><img id = "img_area" /></div>
-		  <textarea id = "channel_box" disabled = "disabled"></textarea>
-		  <input type="url" id = "text_input" />
 		</div>
 	  </div>
 	</div>
