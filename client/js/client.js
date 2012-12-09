@@ -11,20 +11,37 @@ socket.on('msg', function(data) {
 	$('img#img_area').attr('src', data.msg);
 });
 
-$(document).ready(function() {
-	var miliseconds = 2000;
-	$('form#chat').submit(function(e) {
-		e.preventDefault();
-		
-		socket.emit('say', {msg: $('#text_input').val()});
+var miliseconds = 2000;
+var used_urls = {};
+
+function submit_handler(e) {
+	e.preventDefault();
+	$('#used_url').hide();
+
+	var input = $('#text_input').val();
+
+	if (input in used_urls) {
 		$('#text_input').val('');
+		$('#used_url').show();
+	} else {
+		socket.emit('say', {msg: input});
 		$('#text_input').attr('disabled', 'disabled');
 		$('#text_input').val('WAIT FOR ' + miliseconds);
+
+		used_urls[input] = true;
+		
 		setTimeout(function() {
 			$('#text_input').val('');
 			$('#text_input').removeAttr('disabled');
 			$('#text_input').focus();
 		}, miliseconds);
+	}
 
-	});
+}
+
+$(document).ready(function() {
+	
+	$('form#chat').submit(submit_handler);
+
+	$('#used_url').hide();
 });

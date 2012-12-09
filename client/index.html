@@ -9,7 +9,7 @@
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/client.css" /> 
 	<script src="js/client.js"></script>
@@ -23,6 +23,9 @@
 		  <h2>Wiktionary - Guess the Wikipedia Article!</h2>
 		  <p>One player chooses a secret wikipedia article. One person is chosen to guess this article. The first player can only hint at the target, via image links. Other connected players hinder the process by flooding other unrelated images in! Connect via IP on post-it note!</p>
 		  <textarea id = "channel_box" readonly = "readonly"></textarea>
+		  <div class="alert alert-error alert-block" id="used_url">
+			<strong>Whoops!</strong> Used that one before I'm afraid.
+		  </div>
 		  <form id="chat">
 			<input type="url" id = "text_input" autofocus = "autofocus" required="required"/>
 			<input type="submit" id="submit" value="Post"/>
